@@ -23,7 +23,12 @@ const CustomBarChart = () => {
           <CartesianGrid stroke="none" />
           <XAxis type="number" />
           <YAxis dataKey="country" type="category" />
-          <Tooltip />
+          <Tooltip 
+            contentStyle={{ backgroundColor: 'black', color: 'white', border: 'none' }} 
+            itemStyle={({ dataKey }) => ({
+              color: dataKey === 'GDP' ? '#8884d8' : '#82ca9d',  // Match GDP and BirthRate bar colors
+            })}
+          />
           <Legend />
 
           {/* GDP Bar */}
